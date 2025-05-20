@@ -1,22 +1,89 @@
-# ai-dev-kit
+# 🧠 ai-dev-kit
 
-🧠 Lokalny zestaw programisty AI – minimum kodowania, maksimum automatyzacji.
+Lokalny zestaw programisty AI — gotowy do działania offline, z naciskiem na automatyzację, prywatność i szybki start.
 
-## Co zawiera
+## 📆 Co zawiera
 
-- ✅ Ollama + Code LLaMA 70B
-- ✅ Open WebUI (http://localhost:3000)
-- ✅ Gotowy system CI (GitHub Actions)
-- ✅ Automatyczne lintowanie i testy dla JS, Python, PHP
-- ✅ `dev.sh` – wszystko startuje jednym poleceniem
+* 🔧 Skrypt `start-all.sh` — uruchamia cały stack jednym poleceniem
+* 🐳 `docker-compose.yml` — wielousługowa konfiguracja Dockera
+* 🧠 Wsparcie dla lokalnych modeli (w `models/ollama/`)
+* 🗅 WebUI (`webui-src/`) — graficzny interfejs do interakcji z modelami
+* 🧪 Kod i testy w `python/`, `php/`, `js/`
+* 🧹 Lintowanie: ESLint, Prettier, Husky, `lint-staged`
+* 📚 Lokalna baza danych i wektorowa (`data/`)
 
-## Start
+## 🚀 Szybki start
 
-```bash
-chmod +x dev.sh
-./dev.sh
+1. Nadaj prawa wykonania:
+
+   ```bash
+   chmod +x start-all.sh
+   ```
+
+2. Uruchom projekt:
+
+   ```bash
+   ./start-all.sh
+   ```
+
+3. Otwórz przeglądarkę i wejdź na:
+
+   ```
+   http://localhost:3000
+   ```
+
+> ℹ️ Pierwsze uruchomienie może potrwać — Docker pobiera obrazy i buduje środowisko.
+
+---
+
+## 🧠 Struktura projektu
+
+```
+ai-dev-kit/
+├── start-all.sh           # główny skrypt uruchamiający
+├── stop-all.sh            # skrypt zatrzymujący
+├── docker-compose.yml     # definicje usług Dockera
+├── Dockerfile.webui       # Dockerfile do budowy UI
+├── data/                  # cache, pliki użytkownika, webui.db
+├── embedding-models/      # modele embeddingowe (HF)
+├── models/                # modele Ollama (lokalne, ignorowane przez Git)
+├── webui-src/             # źródła WebUI (fork lub submoduł)
+├── python/                # kod i testy w Pythonie
+├── php/                   # kod testowy w PHP
+├── js/                    # kod JS
+├── .env, .envrc           # zmienne środowiskowe
+├── .gitattributes, .gitignore
+└── README.md
 ```
 
-## Repozytorium GitHub
+---
 
-Repo jest gotowe do pracy z GitHub Actions.
+## 🧪 Testy i lintowanie
+
+* Obsługiwane przez `lint-staged`, `husky`, `eslint.config.js`, `lint-staged.config.js`
+* Gotowe do działania w `python/`, `php/`, `js/`
+
+---
+
+## 📆 Duże pliki i Git LFS
+
+* Modele (`models/`), cache (`data/`), embeddingi (`embedding-models/`) są ignorowane przez Git
+* Projekt przygotowany do Git LFS — duże pliki nie są commitowane
+
+---
+
+## ✅ Gotowe do rozbudowy o GitHub Actions
+
+Repo ma przygotowane lintowanie i może być rozszerzone o pełne CI/CD.
+
+---
+
+## 👤 Autor
+
+Projekt tworzony przez [przemekp95](https://github.com/przemekp95) — prywatny zestaw deweloperski do lokalnej pracy z AI bez chmury.
+
+---
+
+## 📄 Licencja
+
+Brak licencji — projekt prywatny (może zostać otwarty na życzenie).
