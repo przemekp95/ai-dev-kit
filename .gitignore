@@ -1,0 +1,17 @@
+.venv/
+models/ollama/id_ed25519
+data/
+embedding-models/
+models/
+*.bin
+*.pt
+*.safetensors
+*.ckpt
+data/
+models/
+data/
+models/
+*.pt
+*.bin
+*.safetensors
+models/ollama/id_ed25519
