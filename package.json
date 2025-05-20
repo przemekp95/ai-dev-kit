@@ -1,0 +1,22 @@
+{
+  "name": "ai-dev-kit",
+  "version": "1.0.0",
+  "description": "🧠 Lokalny zestaw programisty AI – minimum kodowania, maksimum automatyzacji.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3"
+  }
+}

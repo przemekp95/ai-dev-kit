@@ -1,0 +1,11 @@
+FROM node:20-bullseye as frontend
+WORKDIR /webui
+COPY ./webui-src /webui
+RUN npm install && npm run build
+
+FROM python:3.10
+WORKDIR /app
+COPY --from=frontend /webui /app
+RUN pip install --no-cache-dir -r backend/requirements.txt
+EXPOSE 3000
+CMD ["bash", "start.sh"]

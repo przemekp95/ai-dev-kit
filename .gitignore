@@ -15,3 +15,24 @@ models/
 *.bin
 *.safetensors
 models/ollama/id_ed25519
+# Modele i cache
+models/
+data/
+embedding-models/
+*.bin
+*.pt
+*.safetensors
+*.ckpt
+*.tar
+*.zip
+*.7z
+*.npz
+*.h5
+*.onnx
+
+# Pliki systemowe / edytorów
+__pycache__/
+*.pyc
+.env
+.env.*
+venv/
