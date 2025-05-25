@@ -1,0 +1,11 @@
+{
+  "assistants": [
+    {
+      "title": "LLaMA 3 (Ollama)",
+      "model": {
+        "provider": "ollama",
+        "model": "llama3"
+      }
+    }
+  ]
+}
