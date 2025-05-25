@@ -4,33 +4,35 @@ Lokalny zestaw programisty AI — gotowy do działania offline, z naciskiem na a
 
 ## 📆 Co zawiera
 
-* 🔧 Skrypt `start-all.sh` — uruchamia cały stack jednym poleceniem
-* 🐳 `docker-compose.yml` — wielousługowa konfiguracja Dockera
-* 🧠 Wsparcie dla lokalnych modeli (w `models/ollama/`)
-* 🗅 WebUI (`webui-src/`) — graficzny interfejs do interakcji z modelami
-* 🧪 Kod i testy w `python/`, `php/`, `js/`
-* 🧹 Lintowanie: ESLint, Prettier, Husky, `lint-staged`
-* 📚 Lokalna baza danych i wektorowa (`data/`)
+* 🔧 Skrypt `start-all.sh` — uruchamia cały stack jednym poleceniem  
+* 🐳 `docker-compose.yml` — wielousługowa konfiguracja Dockera  
+* 🧠 Wsparcie dla lokalnych modeli (w `models/ollama/`)  
+* 🔍 Wsparcie dla embeddingów (MiniLM, multilingual-e5, SPLADE*)  
+* 🗅 WebUI (`webui-src/`) — graficzny interfejs do interakcji z modelami  
+* 🤖 Integracja z Continue (wtyczka do VS Code)  
+* 🧪 Kod i testy w `python/`, `php/`, `js/`  
+* 🧹 Lintowanie: ESLint, Prettier, Husky, `lint-staged`  
+* 📚 Lokalna baza danych i wektorowa (`data/`)  
 
 ## 🚀 Szybki start
 
 1. Nadaj prawa wykonania:
 
-   ```bash
-   chmod +x start-all.sh
-   ```
+```bash
+chmod +x start-all.sh
+```
 
 2. Uruchom projekt:
 
-   ```bash
-   ./start-all.sh
-   ```
+```bash
+./start-all.sh
+```
 
 3. Otwórz przeglądarkę i wejdź na:
 
-   ```
-   http://localhost:3000
-   ```
+```
+http://localhost:3000
+```
 
 > ℹ️ Pierwsze uruchomienie może potrwać — Docker pobiera obrazy i buduje środowisko.
 
@@ -51,6 +53,7 @@ ai-dev-kit/
 ├── python/                # kod i testy w Pythonie
 ├── php/                   # kod testowy w PHP
 ├── js/                    # kod JS
+├── continue.config.js     # konfiguracja dla Continue (lokalny asystent VS Code)
 ├── .env, .envrc           # zmienne środowiskowe
 ├── .gitattributes, .gitignore
 └── README.md
@@ -60,15 +63,36 @@ ai-dev-kit/
 
 ## 🧪 Testy i lintowanie
 
-* Obsługiwane przez `lint-staged`, `husky`, `eslint.config.js`, `lint-staged.config.js`
+* Obsługiwane przez `lint-staged`, `husky`, `eslint.config.js`, `lint-staged.config.js`  
 * Gotowe do działania w `python/`, `php/`, `js/`
 
 ---
 
-## 📆 Duże pliki i Git LFS
+## 📦 Duże pliki i Git LFS
 
-* Modele (`models/`), cache (`data/`), embeddingi (`embedding-models/`) są ignorowane przez Git
+* Modele (`models/`), cache (`data/`), embeddingi (`embedding-models/`) są ignorowane przez Git  
 * Projekt przygotowany do Git LFS — duże pliki nie są commitowane
+
+---
+
+## 🤖 Integracja z Continue (VS Code)
+
+Ten projekt jest w pełni kompatybilny z [Continue](https://continue.dev) — wtyczką AI dla VS Code.
+
+1. **Zainstaluj Continue** z Marketplace  
+2. **Otwórz ten folder jako workspace**  
+3. Continue automatycznie wykryje lokalny model (`llama3`) i plik `continue.config.js`
+
+Działa offline i lokalnie.
+
+---
+
+## 🔮 Co dalej
+
+* [ ] Endpoint `/api/embed` do testowania embeddingów  
+* [ ] `/api/rag` z lokalnym przeszukiwaniem kodu/projektów  
+* [ ] Promptowanie przez Continue (np. „refactor this function”)  
+* [ ] Obsługa projektów kodowych w `/workspace/projekty`
 
 ---
 
