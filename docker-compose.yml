@@ -13,6 +13,9 @@ services:
     environment:
       - OLLAMA_BASE_URL=http://ollama:11434
       - WEBUI_SECRET_KEY=
+      - EMBEDDINGS_PATH=/home/przemekp95/ai-dev-kit/embedding-models
+      - EMBEDDING_MODEL_1=/home/przemekp95/ai-dev-kit/embedding-models/sentence-transformers-all-MiniLM-L6-v2
+      - EMBEDDING_MODEL_2=/home/przemekp95/ai-dev-kit/embedding-models/models--intfloat--multilingual-e5-large
     depends_on:
       - ollama
     restart: unless-stopped
